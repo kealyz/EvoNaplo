@@ -1,0 +1,19 @@
+.content{
+    display: table;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: justify;
+}
+.content:first-child
+{
+    padding-top: 100px;
+}
+body{
+    font-size: 1rem !important;
+}
+
+/*.content{
+    position: fixed;
+    top: 25%;
+    left: 21.5%;
+}*/

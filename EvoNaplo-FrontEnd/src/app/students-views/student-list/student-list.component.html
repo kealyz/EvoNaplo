@@ -1,0 +1,48 @@
+<div>
+    <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Kiss Pista">
+    </mat-form-field>
+    
+    <mat-table [dataSource] = "dataSource" matSort>
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let student">{{student.id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+            <mat-cell *matCellDef="let student">{{student.firstName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+            <mat-cell *matCellDef="let student">{{student.lastName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</mat-header-cell>
+            <mat-cell *matCellDef="let student">{{student.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="phoneNumber">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Phone number</mat-header-cell>
+            <mat-cell *matCellDef="let student">{{student.phoneNumber}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let student">
+                <button mat-icon-button (click)="editStudent(student.id)"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="warn" (click)="deleteStudent(student.id)"><mat-icon>delete_outline</mat-icon></button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>

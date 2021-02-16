@@ -1,0 +1,9 @@
+<div>
+    <div class="content-container">
+        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+        <span class="content-span full-width">{{ConfirmDeleteDialogeMessage.message}}</span>
+    </div>
+
+    <button mat-flat-button color="warn" [mat-dialog-close]="false" id="no-button">No</button>
+    <button mat-flat-button color="accent" [mat-dialog-close]="true" id="yes-button">Yes</button>
+</div>

@@ -1,0 +1,37 @@
+<div>
+    <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="ex. EvoNaplo">
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sortheader>Name</mat-header-cell>
+            <mat-cell *matCellDef="let project">{{project.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sourceLink">
+            <mat-header-cell *matHeaderCellDef mat-sortheader>Source</mat-header-cell>
+            <mat-cell *matCellDef="let project">{{project.sourceLink}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="usedTechnologies">
+            <mat-header-cell *matHeaderCellDef mat-sortheader>Used technologies</mat-header-cell>
+            <mat-cell *matCellDef="let project">{{project.usedTechnologies}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let project">
+                <button mat-icon-button (click)="goToProject(project.id)"><mat-icon>visibility</mat-icon></button>
+                <button mat-icon-button ><mat-icon>edit</mat-icon></button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

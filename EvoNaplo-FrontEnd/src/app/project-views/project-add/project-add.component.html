@@ -1,0 +1,50 @@
+<form [formGroup]="projectCreationForm">
+
+    <h1>Project creation</h1>
+    <hr>
+
+    <mat-form-field>
+        <mat-label>
+            Project name
+        </mat-label>
+        <input matInput formControlName="projectName">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>
+            Source link
+        </mat-label>
+        <input matInput formControlName="sourceLink">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>
+            Used technologies
+        </mat-label>
+        <input matInput formControlName="usedTechnologies">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>
+            Semester ID
+        </mat-label>
+        <input matInput type="number" formControlName="semesterId">
+    </mat-form-field>
+
+    <br>
+
+    <div>
+        <button type="submit" [disabled]="!projectCreationForm.valid" mat-raised-button mat-button color="primary"
+            (click)="submit()">
+            Create project
+        </button>
+    </div>
+
+
+</form>

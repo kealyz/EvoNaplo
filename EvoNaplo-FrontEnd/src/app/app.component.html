@@ -1,0 +1,72 @@
+<mat-toolbar class="mobileMenu">
+    <span class="example-spacer"></span>
+    <button (click)="snav.toggle()">
+      Menu <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container hasBackdrop="false">
+  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+  [fixedInViewport]="mobileQuery.matches">
+    <mat-nav-list>
+      <a font-size="18px" mat-list-item href="">Main Page</a>
+      <a font-size="18px" mat-list-item href="semester-starter">Join project</a>
+      <a font-size="18px" mat-list-item href="current-user">My profile</a>
+      <mat-divider></mat-divider>
+
+      <h2 matSubheader> LISTS </h2>
+
+      <mat-list-item>
+        <mat-icon>school</mat-icon>
+        <a mat-list-item href="student-list">Students</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>supervisor_account</mat-icon>
+        <a mat-list-item href="mentor-list">Mentors</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>date_range</mat-icon>
+        <a mat-list-item href="semester-list">Semesters</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>list</mat-icon>
+        <a mat-list-item href="project-list">Projects</a>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <h2 matSubheader> LIST EXPANSION </h2>
+      <mat-list-item>
+        <mat-icon>gavel</mat-icon>
+        <a mat-list-item href="semester-starter-admin">Semester starter</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>person_add</mat-icon>
+        <a mat-list-item href="student">Student registration</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>android</mat-icon>
+        <a mat-list-item href="mentor">Mentor registration</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>calendar_today</mat-icon>
+        <a mat-list-item href="semester-add">Semester creation</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>work</mat-icon>
+        <a mat-list-item href="project-add">Project creation</a>
+      </mat-list-item>
+      <mat-list-item *ngIf="isLoggedIn">
+        <mat-icon>exit_to_app</mat-icon>
+        <a mat-list-item (click)="logout()">Logout</a>
+      </mat-list-item>
+      <mat-list-item *ngIf = "isLoggedIn == false">
+        <mat-icon>exit_to_app</mat-icon>
+        <a mat-list-item href="login">Login</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="contentClass">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

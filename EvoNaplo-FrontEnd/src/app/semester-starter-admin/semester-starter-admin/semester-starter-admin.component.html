@@ -1,0 +1,53 @@
+<div class="semesterStudentApproveDiv">
+    <table class="semesterStudentApproveTable">
+        <tr>
+            <td>
+                <table class="projectListTable">
+                    <tr>
+                        <th>
+                            <mat-icon>work</mat-icon> Name
+                        </th>
+                        <th>
+                            <mat-icon>supervisor_account</mat-icon> Mentors
+                        </th>
+                        <th>
+                            <mat-icon>school</mat-icon> Students
+                        </th>
+                    </tr>
+                    <tr *ngFor="let project of projects">
+                        <td>
+                            {{project.name}}
+                        </td>
+                        <td>
+                            <div class="mentorCardInProjectList">
+                                <p>
+                                    Mentor name
+                                </p>
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="displayLiStudentsOnProjects">
+                                <li *ngIf="project.students?.length == 0">
+                                    There are no students on this project.
+                                </li>
+                                <li *ngFor="let projectstudent of project.students">
+                                    <div class="studentCardInProjectList">
+                                        <p>
+                                            {{projectstudent.name}} <mat-icon>highlight_off</mat-icon>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td id="studentCardContainer">
+                <div *ngFor="let student of studentsWithoutProjects" class="studentCardListElement">
+                    <mat-icon>school</mat-icon> {{student.firstName}} {{student.lastName}}
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

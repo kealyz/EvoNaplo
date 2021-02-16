@@ -1,0 +1,33 @@
+<div class="projectCard">
+    <mat-list>
+        <mat-list-item><h1>Project: {{data.name}}</h1></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Sourcelink: {{data.sourceLink}}</mat-list-item>
+        <mat-list-item>Technologies used: {{data.usedTechnologies}}</mat-list-item>
+        <mat-list-item>
+            <table>
+                <tr>
+                    <td>
+                        Students on this project:   
+                    </td>
+                    <td>
+                        <ul>
+                            <li *ngIf="semesterProjectView.students?.length == 0">
+                                There are no students on this project.
+                            </li>
+                            <li *ngFor="let semesterProject of semesterProjectView.students">
+                                {{semesterProject.name}}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        
+        <br/>
+        <mat-list-item>
+            <button type="submit" (click)="goBack()" mat-raised-button mat-button color="primary">Close Project</button>
+        </mat-list-item>
+    </mat-list>
+</div>

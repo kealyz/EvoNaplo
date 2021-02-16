@@ -1,0 +1,10 @@
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+dotnet ef migrations add EvoNaploDatabaseInitializerV-XY
+dotnet ef database update
+
+                     _/\__       
+               ---==/    \\      
+         ___  ___   |.    \|\    
+        | __|| __|  |  )   \\\   
+        | _| | _|   \_/ |  //|\\ 
+        |___||_|       /   \\\/\\

@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "804a171f-c643-401d-9627-06d65c7575df",
+		"name": "EvoNaplo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SemesterController",
+			"item": [
+				{
+					"name": "AddSemester",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"StartYear\": 2019,\n\t\"StartMonth\": 3,\n\t\"StartDay\": 13,\n\t\n\t\"EndYear\": 2019,\n\t\"EndMonth\": 6,\n\t\"EndDay\": 5,\n\t\n\t\"DemoYear\": 2019,\n\t\"DemoMonth\": 5,\n\t\"DemoDay\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Semester",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Semester"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSemester",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Semester?id=15",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Semester"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "15"
+								}
+							]
+						},
+						"description": "It doesn't actually delete, just sets the IsActive value to false."
+					},
+					"response": []
+				},
+				{
+					"name": "EditSemester",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"StartYear\": 2017,\n\t\"StartMonth\": 3,\n\t\"StartDay\": 13,\n\t\n\t\"EndYear\": 2017,\n\t\"EndMonth\": 6,\n\t\"EndDay\": 5,\n\t\n\t\"DemoYear\": 2017,\n\t\"DemoMonth\": 5,\n\t\"DemoDay\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Semester/edit?id=13",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Semester",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						},
+						"description": "Editing the semester with the given ID by setting the start, end and demo date."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MentorController",
+			"item": [
+				{
+					"name": "AddMentor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"try@gmail.com\",\n\t\"Password\": \"trypswd\",\n\t\"FirstName\": \"Tr\",\n\t\"LastName\": \"Ying\",\n\t\"PhoneNumber\": \"36301231234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Mentor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Mentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditMentor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"gabor.toth@gmail.com\",\n\t\"Password\": \"enjelszavamlegujabb\",\n\t\"FirstName\": \"Tóth\",\n\t\"LastName\": \"Gábor\",\n\t\"PhoneNumber\": \"36201561547\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Mentor/edit?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Mentor",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateMentor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44303/api/Mentor/inactivate?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Mentor",
+								"inactivate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMentor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44303/api/Mentor/delete?id=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Mentor",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "StudentController",
+			"item": [
+				{
+					"name": "AddStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"elso.diak@gmail.com\",\n\t\"Password\": \"elsodiakpswdje\",\n\t\"FirstName\": \"Student\",\n\t\"LastName\": \"Diak\",\n\t\"PhoneNumber\": \"36301231234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Student",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"first.edited.student\",\n\t\"Password\": \"azenmodositottjelszavam\",\n\t\"FirstName\": \"Modositott\",\n\t\"LastName\": \"Tanulo\",\n\t\"PhoneNumber\": \"36201561547\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44303/api/Student/edit?id=14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Student",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44303/api/Student/inactivate?id=14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Student",
+								"inactivate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44303/api/Student/delete?id=14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44303",
+							"path": [
+								"api",
+								"Student",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

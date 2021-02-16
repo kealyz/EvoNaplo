@@ -1,0 +1,29 @@
+
+#loginForm mat-form-field
+{
+    width: 300px;
+}
+#loginForm
+{
+    display: table;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 100px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.mat-input-element
+{
+    caret-color: rgb(220,220,220);
+}
+#loginForm div
+{
+    width: 100%;
+    text-align: center;
+}
+#loginForm div button
+{
+    width: 125px;
+}

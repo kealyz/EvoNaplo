@@ -1,0 +1,58 @@
+<h1 align="center">Student edit form</h1>
+
+<form [formGroup]="studentEditForm" align="center">
+
+    <hr>
+
+    <mat-form-field>
+        <mat-label>
+            E-mail<br>
+        </mat-label>
+        <input matInput placeholder="Enter your e-mail here" formControlName="email">
+
+        <mat-error *ngIf="email.invalid && email.touched">
+            Your e-mail does not look right...
+        </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>
+            First name
+        </mat-label>
+        <input matInput placeholder="Enter your first name" formControlName="firstName">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>
+            Last name
+        </mat-label>
+        <input matInput placeholder="Enter your last nem" formControlName="lastName">
+    </mat-form-field>
+
+    <br>
+    
+    <mat-form-field>
+        <mat-label>
+            Phone number
+        </mat-label>
+        <input matInput placeholder="Enter your phone number" formControlName="phoneNumber">
+    </mat-form-field>
+
+    <br>
+
+    <button type="submit" [disabled]="!studentEditForm.valid" mat-raised-button mat-button color="primary" (click)="submit()">
+        Submit
+    </button>
+
+    <br>
+    <br>
+
+    <button mat-raised-button mat-button color="warn" (click)="close()">
+        Close
+    </button>
+
+</form>

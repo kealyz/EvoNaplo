@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+<form [formGroup]="loginForm" id="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <h1 align="center">Login</h1>
+    
+    <hr>
+
+    <mat-form-field appearance="fill">
+        <mat-label>
+            E-mail<br>
+        </mat-label>
+        <input matInput formControlName="email">
+
+        
+    </mat-form-field>
+
+    
+
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>
+            Password
+        </mat-label>
+        
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+        
+    </mat-form-field>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        <!--<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1" ></span>-->
+        Login
+    </button>
+
+    
+
+</form>

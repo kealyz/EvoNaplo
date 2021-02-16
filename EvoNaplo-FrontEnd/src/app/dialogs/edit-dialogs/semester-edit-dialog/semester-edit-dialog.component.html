@@ -1,0 +1,45 @@
+<h1 align="center">Semester editing</h1>
+
+<form [formGroup]="semesterEditForm" align="center">
+
+    <hr>
+
+    <mat-form-field>
+        <mat-label>Choose a starting date</mat-label>
+        <input matInput [matDatepicker]="startDatepicker" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>Choose an end date</mat-label>
+        <input matInput [matDatepicker]="endDatepicker" formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>Choose a demo date</mat-label>
+        <input matInput [matDatepicker]="demoDatepicker" formControlName="demoDate">
+        <mat-datepicker-toggle matSuffix [for]="demoDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #demoDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <button type="button" [disabled]="!semesterEditForm.valid" mat-raised-button mat-button color="primary" (click)="submit()">
+        Submit
+    </button>
+
+    <br>
+    <br>
+
+    <button type="button" mat-raised-button mat-button color="warn" (click)="close()">
+        Close
+    </button>
+
+</form>

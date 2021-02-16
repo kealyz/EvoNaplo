@@ -1,0 +1,19 @@
+li{
+    list-style-type: none;
+}
+ul
+{
+    padding-left: 0;
+}
+.projectCard
+{
+    display: table;
+    margin: 100px auto;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 600px;
+    min-width: 300px;
+}
